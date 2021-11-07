@@ -36,6 +36,8 @@ interface Configs {
   numOfDays: number;
   numOfDaysPerPage: number;
   timeTicksWidth: number;
+  disableHorizontal?: boolean;
+  locale?: 'en' | 'ko';
 }
 
 export { EventGroup, Events, Event, Configs };
