@@ -72,7 +72,7 @@ export default function TimeTable({
     weekendEvent = weekendEvent && parsed.configs.numOfDays > 5;
   }
 
-  const { cellWidth, cellHeight, timeTicksWidth, numOfHours } = configs;
+  const { cellWidth, cellHeight, timeTicksWidth, numOfHours, disableHorizontal } = configs;
 
   const styles = getStyles({ timeTicksWidth, theme });
 
@@ -85,7 +85,7 @@ export default function TimeTable({
             <ScrollView
               scrollEnabled={false}
               ref={weekdayScrollRef}
-              horizontal
+              horizontal={!disableHorizontal}
               showsHorizontalScrollIndicator={false}
             >
               <WeekdayText />
@@ -105,8 +105,9 @@ export default function TimeTable({
           >
             <TimeTableTicks />
             <ScrollView
-              horizontal
+              horizontal={!disableHorizontal}
               onScroll={onHorizontalScroll}
+              scrollEventThrottle={1}
               ref={courseHorizontalScrollRef}
               contentContainerStyle={styles.courseList}
               showsHorizontalScrollIndicator={false}
