@@ -37,7 +37,6 @@ const getStyles = (configs: Configs) =>
       color: 'rgba(131,127,127,0.6)',
     },
     timeLineBox: {
-      paddingTop: 5,
       paddingLeft: 2,
       height: configs.cellWidth,
       backgroundColor: 'transparent',
