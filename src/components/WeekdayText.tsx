@@ -35,19 +35,19 @@ export default function WeekdayText() {
   );
 }
 
-const getStyles = ({ cellWidth, theme }) =>
+const getStyles = ({ cellWidth }) =>
   StyleSheet.create({
     weekdayCell: {
       width: cellWidth,
-      height: 32,
+      height: 48,
       justifyContent: 'center',
       alignItems: 'center',
     },
     weekdayTextHighlight: {
-      color: theme.accent,
+      fontWeight: 'bold',
     },
     weekdayText: {
-      fontSize: 11,
-      color: 'white',
+      fontSize: 13,
+      color: 'black',
     },
   });

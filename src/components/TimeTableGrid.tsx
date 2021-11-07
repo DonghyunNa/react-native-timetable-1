@@ -64,12 +64,12 @@ const getStyles = (width, height) =>
 const strokeStyles = StyleSheet.create({
   stroke: {
     position: 'absolute',
-    height: StyleSheet.hairlineWidth,
+    height: 1,
     width: '100%',
   },
   verticalStroke: {
     position: 'absolute',
-    width: StyleSheet.hairlineWidth,
+    width: 1,
     height: '100%',
   },
 });
