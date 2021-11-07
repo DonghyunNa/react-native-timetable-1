@@ -2,15 +2,14 @@ import React, { useContext } from 'react';
 import { View, Text, StyleSheet } from 'react-native';
 
 import { WEEKDAYS } from '../utils/constants';
-import { ConfigsContext, ThemeContext } from './TimeTable';
+import { ConfigsContext } from './TimeTable';
 
 export default function WeekdayText() {
   const configs = useContext(ConfigsContext);
-  const theme = useContext(ThemeContext);
   const { cellWidth, numOfDays, locale } = configs;
   const currentDay = new Date();
   const currentWeekday = currentDay.getDay() ? currentDay.getDay() : 7;
-  const styles = getStyles({ cellWidth, theme });
+  const styles = getStyles({ cellWidth });
 
   return (
     <>
