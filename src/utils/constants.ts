@@ -26,4 +26,7 @@ export const EVENT_COLORS = [
   '#9575cd',
 ];
 
-export const WEEKDAYS = ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'];
+export const WEEKDAYS = {
+  en: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'],
+  ko: ['월', '화', '수', '목', '금', '토', '일'],
+};

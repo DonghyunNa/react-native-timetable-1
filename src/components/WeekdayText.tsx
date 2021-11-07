@@ -7,7 +7,7 @@ import { ConfigsContext, ThemeContext } from './TimeTable';
 export default function WeekdayText() {
   const configs = useContext(ConfigsContext);
   const theme = useContext(ThemeContext);
-  const { cellWidth, numOfDays } = configs;
+  const { cellWidth, numOfDays, locale } = configs;
   const currentDay = new Date();
   const currentWeekday = currentDay.getDay() ? currentDay.getDay() : 7;
   const styles = getStyles({ cellWidth, theme });
@@ -26,7 +26,7 @@ export default function WeekdayText() {
                 currentWeekday === day && styles.weekdayTextHighlight,
               ]}
             >
-              {`${WEEKDAYS[day - 1]} ${thatDay.getDate()}`}
+              {`${WEEKDAYS?.[locale || 'en']?.[day - 1]}`}
             </Text>
           </View>
         );
