@@ -33,10 +33,10 @@ const groupToEvents = ({
             earlistGrid = timeGrid;
           }
           if (sTime - 1 < configs.startHour) {
-            configs.startHour = sTime - 1;
+            // configs.startHour = sTime - 1;
           }
           if (eTime + 1 > configs.endHour) {
-            configs.endHour = eTime + 1;
+            // configs.endHour = eTime + 1;
           }
           if (day > configs.numOfDays) {
             configs.numOfDays = day;
