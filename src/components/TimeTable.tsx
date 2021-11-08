@@ -50,6 +50,7 @@ export default function TimeTable({
   const onHorizontalScroll = (e) => {
     weekdayScrollRef.current.scrollTo({
       x: e.nativeEvent.contentOffset.x,
+      animated: false,
     });
   };
 
@@ -85,6 +86,7 @@ export default function TimeTable({
             <ScrollView
               scrollEnabled={false}
               ref={weekdayScrollRef}
+              bounces={false}
               horizontal
               showsHorizontalScrollIndicator={false}
             >
@@ -109,6 +111,8 @@ export default function TimeTable({
               horizontal
               onScroll={onHorizontalScroll}
               scrollEventThrottle={16}
+              bounces={false}
+              
               ref={courseHorizontalScrollRef}
               contentContainerStyle={styles.courseList}
               showsHorizontalScrollIndicator={false}
@@ -143,7 +147,7 @@ const getStyles = ({ timeTicksWidth, theme }) =>
   StyleSheet.create({
     weekdayRow: {
       flexDirection: 'row',
-      height: 32,
+      height: 48,
       backgroundColor: theme.primary,
     },
     placeholder: {

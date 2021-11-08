@@ -13,12 +13,12 @@ export default function WeekdayText() {
 
   return (
     <>
-      {Array.from({ length: numOfDays }, (_, i) => 1 + i).map((day) => {
+      {Array.from({ length: numOfDays }, (_, i) => 1 + i).map((day, index) => {
         const differenceOfDate = day - currentWeekday;
         const thatDay = new Date();
         thatDay.setDate(new Date().getDate() + differenceOfDate);
         return (
-          <View key={`weekday-${day}`} style={styles.weekdayCell}>
+          <View key={`weekday-${day}`} style={[styles.weekdayCell, index === 0 && {borderLeftWidth: 1}, index === 4 && { borderRightWidth: 1 }]}>
             <Text
               style={[
                 styles.weekdayText,
@@ -38,11 +38,12 @@ const getStyles = ({ cellWidth }) =>
   StyleSheet.create({
     weekdayCell: {
       width: cellWidth,
-      height: 32,
+      height: 48,
       justifyContent: 'center',
       alignItems: 'center',
+      borderTopWidth: 1,
       borderBottomWidth: 1,
-      borderBottomColor: 'rgba(12, 12, 12, 0.05)',
+      borderColor: 'rgba(12, 12, 12, 0.1)',
     },
     weekdayTextHighlight: {
       fontWeight: 'bold',

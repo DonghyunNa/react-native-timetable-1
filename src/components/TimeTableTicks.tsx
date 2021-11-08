@@ -14,9 +14,13 @@ const TimeTableTicks = () => {
         (_, i) => startHour + i
       ).map((hour) => (
         <View style={styles.timeLineBox} key={`timeline-${hour}`}>
-          <Text style={styles.timeLineText}>{`${
-            hour > 9 ? '' + hour.toFixed(0) : '0' + hour.toFixed(0)
-          }`}</Text>
+          {hour !== startHour &&
+            (
+              <Text style={styles.timeLineText}>{`${
+                hour > 9 ? '' + hour.toFixed(0) : '0' + hour.toFixed(0)
+              }`}</Text>
+            )
+          }
         </View>
       ))}
     </View>

@@ -57,9 +57,8 @@ const getStyles = (event: Event, configs: Configs) => {
   const styles = StyleSheet.create({
     courseCard: {
       position: 'absolute',
-      borderRadius: 4,
       zIndex: 2,
-      width: cellWidth - 3,
+      width: cellWidth - 1,
       marginLeft: cellWidth * (event.day - 1),
       height: durationHeight,
       marginTop: topMarginValue,
@@ -69,9 +68,6 @@ const getStyles = (event: Event, configs: Configs) => {
       overflow: 'hidden',
       justifyContent: 'center',
       alignItems: 'center',
-      borderColor: 'white',
-      borderWidth: 1,
-      borderRadius: 4,
       padding: 2,
       backgroundColor: bgColor,
     },
