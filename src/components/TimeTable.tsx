@@ -129,9 +129,6 @@ export default function TimeTable({
                     color: event.color || eventColors[i % eventColors.length],
                   }}
                   onPress={eventOnPress && (() => eventOnPress(event))}
-                  backgroundColor={
-                    contentContainerStyle?.backgroundColor || theme.background
-                  }
                 />
               ))}
             </ScrollView>
