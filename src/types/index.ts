@@ -6,6 +6,7 @@ interface Event {
   color?: string;
   title?: string;
   location?: string;
+  lecturer?: string;
   section?: string;
   groupIndex?: number; // index of the group in eventGroups array that this event belongs to
 }
@@ -25,6 +26,7 @@ interface EventGroup {
   courseId: string;
   sections: Sections;
   title?: string;
+  lecturer?: string;
 }
 
 interface Configs {

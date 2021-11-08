@@ -4,8 +4,8 @@ import { TouchableOpacity, Text, StyleSheet } from 'react-native';
 import type { Configs, Event } from '../types';
 import { ConfigsContext } from './TimeTable';
 
-const TITLE_LINE_HEIGHT = 12;
-const SUBTITLE_LINE_HEIGHT = 12;
+const TITLE_LINE_HEIGHT = 13;
+const SUBTITLE_LINE_HEIGHT = 13;
 
 type EventCardProps = {
   event: Event;
@@ -27,14 +27,15 @@ export default function EventCard({
     >
       <Text
         style={styles.courseCardTitle}
-        numberOfLines={2}
-        ellipsizeMode="clip"
+        allowFontScaling={false}
+        numberOfLines={numOfLines < 3 ? 2 : numOfLines - 1}
+        ellipsizeMode="tail"
       >
-        {`${event.courseId}${event.section ? ` ${event.section}` : ''}`}
+        {`${event.title}`}
       </Text>
       {Boolean(numOfLines) && (
-        <Text style={styles.courseCardLocation} numberOfLines={numOfLines}>
-          {event.location}
+        <Text style={styles.courseCardLocation} allowFontScaling={false} numberOfLines={numOfLines}>
+          {event.lecturer}
         </Text>
       )}
     </TouchableOpacity>
@@ -66,19 +67,23 @@ const getStyles = (event: Event, configs: Configs) => {
     innerCard: {
       flex: 1,
       overflow: 'hidden',
+      justifyContent: 'center',
+      alignItems: 'center',
+      borderColor: 'white',
+      borderWidth: 1,
       borderRadius: 4,
-      padding: 4,
+      padding: 2,
       backgroundColor: bgColor,
     },
     courseCardTitle: {
-      fontSize: 10,
+      fontSize: 13,
       lineHeight: TITLE_LINE_HEIGHT,
-      fontWeight: 'bold',
       color: 'black',
+      textAlign: 'center',
     },
     courseCardLocation: {
       marginTop: 2,
-      fontSize: 10,
+      fontSize: 13,
       color: 'black',
     },
   });

@@ -50,6 +50,7 @@ const groupToEvents = ({
             endTime: v.endTimes[i],
             location: v.locations[i],
             color: eventColors[colorIndex % eventColors.length],
+            lecturer: event.lecturer,
             groupIndex: groupIndex,
           });
         });
