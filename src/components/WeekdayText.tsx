@@ -38,7 +38,7 @@ const getStyles = ({ cellWidth }) =>
   StyleSheet.create({
     weekdayCell: {
       width: cellWidth,
-      height: 48,
+      height: 32,
       justifyContent: 'center',
       alignItems: 'center',
       borderBottomWidth: 1,

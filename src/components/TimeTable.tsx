@@ -143,7 +143,7 @@ const getStyles = ({ timeTicksWidth, theme }) =>
   StyleSheet.create({
     weekdayRow: {
       flexDirection: 'row',
-      height: 48,
+      height: 32,
       backgroundColor: theme.primary,
     },
     placeholder: {

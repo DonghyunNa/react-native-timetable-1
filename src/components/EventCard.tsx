@@ -1,7 +1,6 @@
 import React, { useContext } from 'react';
 import { TouchableOpacity, Text, StyleSheet } from 'react-native';
 
-import addOpacity from '../utils/addOpacity';
 import type { Configs, Event } from '../types';
 import { ConfigsContext } from './TimeTable';
 
@@ -50,7 +49,6 @@ const getStyles = (event: Event, configs: Configs) => {
     (sTime[0] - startHour) * cellHeight + (sTime[1] / 60.0) * cellHeight;
   const durationHeight =
     cellHeight * (eTime[0] - sTime[0] + (eTime[1] - sTime[1]) / 60.0);
-  const textColor = addOpacity(event.color, 0.5);
   const numOfLines = Math.floor(
     (durationHeight - 2 * TITLE_LINE_HEIGHT - 10) / SUBTITLE_LINE_HEIGHT
   );
@@ -76,12 +74,12 @@ const getStyles = (event: Event, configs: Configs) => {
       fontSize: 10,
       lineHeight: TITLE_LINE_HEIGHT,
       fontWeight: 'bold',
-      color: textColor,
+      color: 'black',
     },
     courseCardLocation: {
       marginTop: 2,
       fontSize: 10,
-      color: textColor,
+      color: 'black',
     },
   });
   return { styles, numOfLines };
