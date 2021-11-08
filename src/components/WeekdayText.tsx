@@ -41,12 +41,14 @@ const getStyles = ({ cellWidth }) =>
       height: 48,
       justifyContent: 'center',
       alignItems: 'center',
+      borderBottomWidth: 1,
+      borderBottomColor: 'rgba(12, 12, 12, 0.05)',
     },
     weekdayTextHighlight: {
       fontWeight: 'bold',
     },
     weekdayText: {
-      fontSize: 13,
+      fontSize: 15,
       color: 'black',
     },
   });

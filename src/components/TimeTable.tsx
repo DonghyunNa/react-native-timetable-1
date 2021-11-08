@@ -93,6 +93,7 @@ export default function TimeTable({
           </View>
           <ScrollView
             ref={courseVerticalScrollRef}
+            scrollEventThrottle={16}
             contentContainerStyle={styles.courseContainer}
             showsVerticalScrollIndicator={false}
             onContentSizeChange={() => {
